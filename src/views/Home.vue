@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="global-model">
+    <div class="global-model__logo">
+      <img  src="../assets/logo.png" alt="">
+    </div>
+    <div class="global-model__header">
+      <h4 class="global-model__title">Панель котировок</h4>
+    </div>
+    <Chart></Chart>
+    <QuotesPanel></QuotesPanel>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import QuotesPanel from '../components/QuotesPanel'
+import Chart from '../components/Сhart'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    QuotesPanel,
+    Chart
+  },
+  computed: {
+    ...mapGetters([
+      'arrQuotation'
+    ])
+  }  
 }
 </script>

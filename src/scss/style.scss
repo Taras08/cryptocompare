@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body {
+    background: #191A20;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.global-model {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+    "logo"
+    "header"
+    "chart"
+    "quotes" ;
+    grid-template-rows: 6fr 5fr 54fr 62fr;
+    align-items: start;
+    &__logo {
+        grid-area: logo;
+        margin-top: 10px;
+        text-align: center;
+    }
+    &__header {
+        grid-area: header;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    &__title {
+        margin-left: 15px;
+        color:#FFFFFF;      
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 600;
+    }
+    &__quotes {
+        grid-area: quotes; 
+        border-top: 2px solid black;
+    }
+    &__chart {
+        grid-area: chart; 
+        width: 100%;
+        height: 100%;
+        background: #775f5f;
+    }
+}
+.quotes {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        color: #757679;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    &__percent {
+        display: flex;
+        text-align: center;
+        & img {
+            margin-top: 12px;
+            margin-right: 7px;
+            height: 14px;
+        }
+    }
+}
+.test {
+    width: 200px;
+    height: 50px;
+}
+@media (min-width: 380px) {
+    .global-model {
+        grid-template-areas:
+        "logo logo"
+        "header chart "
+        "quotes chart ";
+        grid-template-rows: 3fr 4fr 60fr;
+        grid-template-columns: 1fr 3fr;
+        &__logo {
+            
+        }
+        &__header {
+            border-top: 5px solid black;
+        }
+        &__quotes {
+            border-top: 5px solid black;
+        }
+        &__chart {
+            border-left: 5px solid black;
+            border-top: 5px solid black;
+        }
+    }
+}
